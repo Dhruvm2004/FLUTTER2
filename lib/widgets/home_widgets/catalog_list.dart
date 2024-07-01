@@ -52,13 +52,13 @@ class CatalogItem extends StatelessWidget {
               children: [
                 "\$${catalog.price}".text.bold.xl.make(),
                 ElevatedButton(onPressed: () {},
-                style: ButtonStyle(backgroundColor: WidgetStateProperty.all(MyTheme.darkBluishColor)), child: "Add to cart".text.size(12).color(Colors.white).make())
+                style: ButtonStyle(backgroundColor: WidgetStateProperty.all(context.accentColor)), child: "Add to cart".text.size(12).color(Colors.white).make())
               ],
             ).pOnly(right: 8.0)
           ],
         ))
         
       ],
-    )).white.rounded.square(150).make().py16();
+    )).color(context.cardColor).rounded.square(150).make().py16();
   }
 }

@@ -17,9 +17,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent),
-      backgroundColor:MyTheme.creamColor,
+      backgroundColor:context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: Colors.black,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.all(0),
@@ -43,14 +43,14 @@ Expanded(
   arcType: VxArcType.convey,
   edge: VxEdge.top,
     child: Container(
-    color: Colors.white,
+    color: Colors.black,
     width: context.screenWidth,
     child: Column(
       children: [
-        catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
+        catalog.name.text.xl4.color(Colors.white).bold.make(),
             catalog.desc.text.textStyle(context.captionStyle).xl.make(),
             10.heightBox,
-            "Aliquyam sed sit vero takimata consetetur clita takimata takimata. Elitr et duo kasd est ipsum eos. Clita lorem tempor diam.".text.textStyle(context.captionStyle).make().p16(),
+            "Aliquyam sed sit vero takimata consetetur clita takimata takimata. Elitr et duo kasd est ipsum eos. Clita lorem tempor diam.".text.color(context.accentColor).textStyle(context.captionStyle).make().p16(),
             
 
       ],
