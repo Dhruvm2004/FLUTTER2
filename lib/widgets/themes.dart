@@ -34,8 +34,10 @@ colorScheme: ColorScheme.fromSwatch().copyWith(
         color: Colors.black,
         elevation: 0.0,
         iconTheme: IconThemeData(color: Colors.white),
+        
         toolbarTextStyle: Theme.of(context).textTheme.bodyMedium,
         titleTextStyle: Theme.of(context).textTheme.headlineMedium,
+        
       ));
 
   static Color creamColor = Color(0xfff5f5f5);
