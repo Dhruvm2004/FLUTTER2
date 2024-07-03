@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter2/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
+
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
 
@@ -11,8 +12,6 @@ class CartPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: "Cart".text.color(Colors.white).make(),
-
-
       ),
       body: Column(
         children: [
@@ -24,6 +23,7 @@ class CartPage extends StatelessWidget {
     );
   }
 }
+
 class _CartTotal extends StatelessWidget {
   const _CartTotal({super.key});
 
@@ -36,12 +36,15 @@ class _CartTotal extends StatelessWidget {
         children: [
           "\$9999".text.xl5.color(Colors.white).make(),
           30.widthBox,
-          ElevatedButton(onPressed: (){},
-          style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all(Colors.blue)
-          ), 
-          child: 
-          "Buy".text.white.make()).w32(context)
+          ElevatedButton(
+                  onPressed: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: "Buying not supported yet".text.make()));
+                  },
+                  style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(Colors.blue)),
+                  child: "Buy".text.white.make())
+              .w32(context)
         ],
       ),
     );
@@ -61,12 +64,14 @@ class _CartListState extends State<_CartList> {
     return ListView.builder(
       itemCount: 5,
       itemBuilder: (context, index) => ListTile(
-        leading: Icon(Icons.done),
+        leading: Icon(Icons.done).iconColor(Colors.white),
         trailing: IconButton(
-          onPressed: (){}, 
-          icon: Icon(Icons.remove_circle_outline)),
-          title: "Item 1".text.make(),
-      ).color(context.cardColor),
+            onPressed: () {
+              
+            },
+            icon: Icon(Icons.remove_circle_outline).iconColor(Colors.white)),
+        title: "Item 1".text.white.make(),
+      ),
     );
   }
 }
